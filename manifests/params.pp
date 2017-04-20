@@ -1,6 +1,6 @@
 # Class: nginx::params
 #
-class nginx_load_balancer::params {
+class simple_load_balancer::params {
   $estado_del_balanceo          = false
   $servicio_a_clusterizar       = 'servicio_a_clusterizar'
   $full_fqdn_server1            = 'full_fqdn_server1'
