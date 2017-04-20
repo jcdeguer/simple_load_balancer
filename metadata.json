@@ -1,0 +1,13 @@
+{
+  "name": "jcdeguer-simple_load_balancer",
+  "version": "0.1.0",
+  "author": "jcdeguer",
+  "summary": "It's a puppet module that could install, config, and manage a simple load balancer using Nginx on CentOS 7.x",
+  "license": "Apache 2.0",
+  "source": "https://github.com/jcdeguer/simple_load_balancer",
+  "project_page": "https://github.com/jcdeguer/simple_load_balancer",
+  "issues_url": "https://github.com/jcdeguer/simple_load_balancer/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
