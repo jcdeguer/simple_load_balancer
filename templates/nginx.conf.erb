@@ -1,0 +1,27 @@
+# Archivo administrado por Puppet
+user <%= @usuario %>;
+error_log <%= @log_de_errores %>;
+pid <%= @id_de_proceso %>;
+include <%= @modulos_incluidos %>;
+worker_processes <%= @worker_processes %>;
+worker_rlimit_nofile <%= @worker_rlimit_nofile %>;
+
+events {
+  accept_mutex <%= @accept_mutex %>;
+  accept_mutex_delay <%= @accept_mutex_delay %>;
+  worker_connections <%= @worker_connections %>;
+}
+
+http {
+  upstream <%= @servicio_a_clusterizar %> {
+    server <%= @full_fqdn_server1 %>:<%= @puerto_usado_app %>;
+    server <%= @full_fqdn_server2 %>:<%= @puerto_usado_app %>;
+    keepalive <%= @keepalive_timeout %>;
+  }
+  server {
+    listen <%= @puerto %>;
+    location <%= @directorio_raiz %> {
+      proxy_pass http://<%= @servicio_a_clusterizar %>;
+    }
+  }
+}
